@@ -30,7 +30,7 @@
             <div id="div_calc">
                 <img src="imagens/Somar.png" id="bt_somar" class="botoes" data-oper="+" alt="Somar">
                 <img src="imagens/Subtrair.png" id="bt_subtrair" class="botoes" data-oper="+" alt="Subtrair">
-                <img src="imagens/Multiplicar.png" id="bt_multiplicar" class="botoes" data-oper="+" alt="Multiplicar">
+                <img src="imagens/Multiplicar.png" id="bt_multiplicar" class="botoes" data-oper="*" alt="Multiplicar">
                 <img src="imagens/Calcular.png" alt="Calcular" id="bt_calcular">
                 <span id="bt_limpar">Limpar</span>
             </div>
@@ -38,14 +38,14 @@
                 Dimensões:
                 <br>
                 Largura:
-                <input type="number" id="num_largura" min="50" max="100" value="50">px
+                <input type="number" id="num_largura" min="50" max="100" value="50"> px
                 <br>
                 Altura: 
-                <input type="number" id="num_altura" min="50" max="100" value="50">px
+                <input type="number" id="num_altura" min="50" max="100" value="50"> px
             </div>
             <div>
-                <div id="div_poligono">                </div>
-                <p id="p_perimetro">        </p>
+                <div id="div_poligono"> <!--VAZIO--> </div>
+                <p id="p_perimetro">  <!--VAZIO--> </p>
             </div>
         </div> <!-- Fim do container superior -->
 
@@ -65,11 +65,12 @@
                 <input type="text" size="5" disabled>
             </div>
             <div>
-                <p><Link> <a id="">Aumentar</a> </Link> </p>
-                <p><Link> <a id="">Aumentar</a> </Link> </p>
+                <p><Link> <a id="id_aumentar">Aumentar</a> </Link> </p>
+                <p><Link> <a id="id_diminuir">Diminuir</a> </Link> </p>
             </div>
-            <div><img src="imagens/clipboard.png" alt=""></div>
+            <div><img src="imagens/clipboard.png" id="img_redimensionada"></div>
         </div>
     </main>
+    <script src="script/script.js"></script>
 </body>
 </html>
