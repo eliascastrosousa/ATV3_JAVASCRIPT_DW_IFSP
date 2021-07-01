@@ -41,7 +41,33 @@ function FunCalculaResultado(){
 } // fim da função de calcular resultado com tratamento de erro
 
 function FunLimpaDisplay(){
-    obj_txt_display.value = ' '
+    obj_txt_display.value = ''
+    conta_digitos = 0
 }
 
+const obj_num_largura = document.querySelector('#num_largura')
+const obj_num_altura = document.querySelector('#num_altura')
+const obj_div_poligono =  document.querySelector('#div_poligono')
+const obj_p_perimetro =  document.querySelector('#p_perimetro')
+
+obj_num_largura.addEventListener('change', FunRedimensionaPoligono)
+obj_num_altura.addEventListener('change', FunRedimensionaPoligono)
+
+function FunRedimensionaPoligono(){
+    if (obj_num_largura.value < 50 || 
+        obj_num_largura.value > 100 || 
+        obj_num_altura.value < 50 || 
+        obj_num_altura.value > 100){
+            alert('VALORES INVALIDOS! ')
+    }
+    else {
+        obj_div_poligono.style.width = obj_num_largura.value + 'px'
+        obj_div_poligono.style.height = obj_num_altura.value + 'px'
+        obj_div_poligono.innerHTML = `Área: ${obj_num_largura.value*obj_num_altura.value}px²`
+        //obj_p_perimetro.innerText = 'Perímetro do polígono: ' + (obj_num_largura.value*2+obj_num_altura.value*2) + 'px'
+        obj_p_perimetro.innerText = 'Perímetro: '+
+        ( parseInt(obj_num_largura.value)+ parseInt(obj_num_altura.value) + 
+        parseInt(obj_num_largura.value)+ parseInt(obj_num_altura.value)) + 'px'
+    }
+}
 
